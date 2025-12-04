@@ -2,12 +2,18 @@
 // tags: string, conversion
 
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
+// #include <string.h>
 
-// program is not crrect currect it
+int main() {
+    char str[] = "Hello Mom";
+    for (int i = 0; str[i]; i++) {
+      str[i] = toupper((unsigned char)str[i]);
+    }
 
-void main() {
-  char string[] = "Hello Mom";
-  strupr(string);
-  printf("%s", string);
+    // strupr() Function Not Standard, mean always not available in each c compiler
+    // strcpy(str, strupr(str));
+
+    printf("%s\n", str);
+    return 0;
 }

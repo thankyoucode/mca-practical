@@ -4,27 +4,32 @@
 #include <stdio.h>
 #include <string.h>
 
+void display(char file_name[]) {
+  char str[256];
+  FILE *file = fopen(file_name, "r");
+
+  printf("File: %s >>>\n", file_name);
+  while(fgets(str, sizeof(str), file) != NULL) {
+    printf("%s", str);
+  }
+  fclose(file);
+}
+
 void main() {
-  // opening file in write mode , if not exist it create if exist is rewrite efrom start as new
   FILE *file = fopen("47_just_text.txt", "w");
-  char string[256];
-  printf("Write text to file enter `EOF` to end this writing: \n");
-  while (fgets(string, sizeof(string), stdin) != NULL) {
-    string[strcspn(string, "\n")] = 0;
-    if (strstr(string, "EOF")) {
-      string[strcspn(string, "EOF")] = 0;
-      fprintf(file, "%s\n", string);
+  char str[256];
+
+  printf("Write text to file (end with `EOF`)\n");
+  while (fgets(str, sizeof(str), stdin) != NULL) {
+    if (strstr(str, "EOF")) {
+      str[strcspn(str, "EOF")] = 0;
+      fprintf(file, "%s\n", str);
       break;
     }
-    fprintf(file, "%s\n", string); // Write with newline preserved
+    fprintf(file, "%s", str);
   }
   fclose(file);
-  // openging as read view file need to exist here
-  file = fopen("47_just_text.txt", "r");
-  printf("File contents:\n");
-  // reading context of this file
-  while (fgets(string, sizeof(string), file) != NULL) {
-      printf("%s", string);
-  }
-  fclose(file);
+
+  // displya file context
+  display("47_just_text.txt");
 }
