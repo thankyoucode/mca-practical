@@ -131,4 +131,5 @@ If you would like to contribute to this repository, feel free to open an issue o
 
 ## Updates
 
+`January 05, 2026` - JAVA programs added.
 `December 04, 2025` - C 1 to 47 programs added.
