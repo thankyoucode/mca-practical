@@ -1,1 +1,19 @@
-c/*.txt
+# C directory
+
+C/
+[^/]*[^/.]$
+**/C/[^/]*[^/.]$
+C/*.exe C/*.o C/a.out
+C/*.txt
+
+# Java directory
+*.class
+**/Java/*.class
+
+Java/java-programs.md
+
+# Keep source files safe
+!**/*.java
+!**/*.c
+!**/*.h
+!*README*

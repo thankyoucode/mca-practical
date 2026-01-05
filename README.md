@@ -2,7 +2,6 @@
 
 It is funny to rerun most of programming languages and some of technology in mca as academic learning 😄
 
-
 ## Navigation
 
 - [C Programs](#c-programs)
@@ -68,7 +67,59 @@ It is funny to rerun most of programming languages and some of technology in mca
 
 ## Java Programs
 
-- Coming soon...
+- [\_01_Hello.java](Java/_01_Hello.java)
+- [\_02_PrimeAndFibonacci.java](Java/_02_PrimeAndFibonacci.java)
+- [\_03_IsPalindrome.java](Java/_03_IsPalindrome.java)
+- [\_04_MathPowerUse.java](Java/_04_MathPowerUse.java)
+- [\_05_ArmstrongNumber.java](Java/_05_ArmstrongNumber.java)
+- [\_06_MinFrom3N.java](Java/_06_MinFrom3N.java)
+- [\_07_MaxFrom4N.java](Java/_07_MaxFrom4N.java)
+- [\_08_Multiply2Matrix.java](Java/_08_Multiply2Matrix.java)
+- [\_09_MatrixAddition.java](Java/_09_MatrixAddition.java)
+- [\_10_Args.java](Java/_10_Args.java)
+- [\_11_CountEachCharInstent.java](Java/_11_CountEachCharInstent.java)
+- [\_12_Student.java](Java/_12_Student.java)
+- [\_13_This.java](Java/_13_This.java)
+- [\_14_ConstroctorAndStaticScope.java](Java/_14_ConstroctorAndStaticScope.java)
+- [\_15_StaticExecuteBeforeMain.java](Java/_15_StaticExecuteBeforeMain.java)
+- [\_16_PrimitiveToObj.java](Java/_16_PrimitiveToObj.java)
+- [\_17_ConstructorChaining.java](Java/_17_ConstructorChaining.java)
+- [\_18_MethodOverRiddingClass.java](Java/_18_MethodOverRiddingClass.java)
+- [\_19_Inheritence_account_current_saving.java](Java/_19_Inheritence_account_current_saving.java)
+- [\_20_SuperConstructor.java](Java/_20_SuperConstructor.java)
+- [\_21_Final.java](Java/_21_Final.java)
+- [\_22_ClassAxClassBx.java](Java/_22_ClassAxClassBx.java)
+- [\_23_Abstract.java](Java/_23_Abstract.java)
+- [\_24_Interface.java](Java/_24_Interface.java)
+- [\_25_StudentExam.java](Java/_25_StudentExam.java)
+- [\_26_Package.java](Java/_26_Package.java)
+- [\_27_GenericClass.java](Java/_27_GenericClass.java)
+- [\_28_StringCase.java](Java/_28_StringCase.java)
+- [\_29_StringMethods.java](Java/_29_StringMethods.java)
+- [\_30_FinalClassMethodVeriable.java](Java/_30_FinalClassMethodVeriable.java)
+- [\_31_zero_division_error.java](Java/_31_zero_division_error.java)
+- [\_32_throw_try_catch.java](Java/_32_throw_try_catch.java)
+- [\_33_Throws.java](Java/_33_Throws.java)
+- [\_34_ObjectFileWrite.java](Java/_34_ObjectFileWrite.java)
+- [\_35_GenericSorter.java](Java/_35_GenericSorter.java)
+- [\_36_FileCrud.java](Java/_36_FileCrud.java)
+- [\_37_StanderdInput.java](Java/_37_StanderdInput.java)
+- [\_38_FlieExist.java](Java/_38_FlieExist.java)
+- [\_39_CreateFileOnPath.java](Java/_39_CreateFileOnPath.java)
+- [\_40_ReadFile.java](Java/_40_ReadFile.java)
+- [\_41_CountLinesInFile.java](Java/_41_CountLinesInFile.java)
+- [\_42_GenericCount.java](Java/_42_GenericCount.java)
+- [\_43_GenericValueSwap.java](Java/_43_GenericValueSwap.java)
+- [Collection_1_LinkedListStudent.java](Java/Collection_1_LinkedListStudent.java)
+- [Collection_2_Employee.java](Java/Collection_2_Employee.java)
+- [Collection_3_HashMap.java](Java/Collection_3_HashMap.java)
+- [Collection_4_LinkedListStudentSort.java](Java/Collection_4_LinkedListStudentSort.java)
+- [Thread_1_Thread.java](Java/Thread_1_Thread.java)
+- [Thread_2_Runable.java](Java/Thread_2_Runable.java)
+- [Thread_3_GapTime.java](Java/Thread_3_GapTime.java)
+- [Thread_4_OddEven.java](Java/Thread_4_OddEven.java)
+- [Thread_5_ABC.java](Java/Thread_5_ABC.java)
+- [Thread_6_sync.java](Java/Thread_6_sync.java)
 
 ## SQL Programs
 

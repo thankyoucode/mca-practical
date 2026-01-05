@@ -9,6 +9,9 @@ void main() {
   int count = 0;
 
   for(int i=0; i < 5; i++) {
+    printf("%d. height weight: ", i+1);
+    scanf("%d %d", &persons[i][0], &persons[i][1]);
+
     if(persons[i][0] > 170 && persons[i][1] < 50) {
       count++;
     }

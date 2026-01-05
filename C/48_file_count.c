@@ -16,6 +16,6 @@ void countCharPerLine(char file_name[]) {
   fclose(file);
 }
 
-void main() {
-  countCharPerLine("48_file_count.c");
+void main(int argc, char *argv[]) {
+  countCharPerLine(argv[1]);
 }
