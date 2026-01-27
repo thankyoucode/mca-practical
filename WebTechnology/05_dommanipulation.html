@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>DOM Manipulation</title>
+  <style>
+    input,
+    button {
+      margin: 8px 0;
+      padding: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>DOM Manipulation</h1>
+  <p style="font-size: 1.2rem;">simple add 2 number</p>
+  <input type="number" placeholder="a value" id="a-value" onchange="addAB()"><br />
+  <input type="number" placeholder="b value" id="b-value" onchange="addAB()"><br />
+  <p id="sum"></p>
+  <script>
+    const a = document.getElementById('a-value');
+    const b = document.getElementById('b-value');
+    const sum = document.getElementById('sum');
+
+    function addAB() {
+      sum.innerText = `${a.value} + ${b.value} = ${parseInt(a.value) + parseInt(b.value)}`;
+    }
+  </script>
+</body>
+
+</html>

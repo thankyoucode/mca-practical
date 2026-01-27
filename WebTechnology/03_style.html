@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>freeCodeCamp.org</title>
+  <style>
+    :root {
+      --bg-color: #f5f6f7;
+      --text-color: #1b1b32;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      width: 100vw;
+      padding: 4px;
+      display: flex;
+      justify-content: center;
+      background-color: var(--text-color);
+    }
+
+    main {
+      margin: 20px auto;
+      max-width: 70%;
+    }
+
+    .logo {
+      max-width: 20vw;
+      min-width: 200px;
+      padding: 8px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      padding: 16px 0;
+    }
+
+    p {
+      font-size: 1.4rem;
+      padding: 8px 0;
+    }
+
+    .btn-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn {
+      color: var(--text-color);
+      font-size: 1.3rem;
+      font-weight: bold;
+      border: 4px solid rgb(207, 180, 48);
+      padding: 16px;
+      margin: 16px 8px;
+      background: linear-gradient(rgb(227, 209, 75), rgb(197, 172, 48));
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: rgb(227, 209, 75);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="https://freecodecamp.org">
+      <img class="logo" src="https://design-style-guide.freecodecamp.org/img/fcc_primary_large.svg"
+        alt="freecodecamp logo">
+    </a>
+  </header>
+  <main>
+    <h1>Build Your Skills for Free.</h1>
+    <p>Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and
+      English for
+      Developers.</p>
+    <div class="btn-container">
+      <a><button class="btn" href="https://api.freecodecamp.org/signin">Get started (it's free)</button></a>
+    </div>
+  </main>
+</body>
+
+</html>

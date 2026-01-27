@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html ng-app="fruitGame">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    .board {
+      display: grid;
+      grid-template: repeat(7, 50px) / repeat(7, 50px);
+      gap: 2px;
+      margin: 20px auto;
+    }
+
+    .fruit {
+      font-size: 30px;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.3s;
+    }
+
+    .selected {
+      background: yellow;
+    }
+
+    .matched {
+      transform: scale(0);
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body ng-controller="FruitCtrl">
+
+  <h1>Fruit Crush Game</h1>
+  <div>Score: {{score}} | Moves Left: {{movesLeft}}</div>
+  <div ng-if="gameOver">Game Over! Final Score: {{score}}</div>
+
+  <div class="board" ng-if="!gameOver">
+    <div ng-repeat="row in board track by $index">
+      <div ng-repeat="fruit in row track by $index" class="fruit"
+        ng-class="{selected: fruit.selected, matched: fruit.matched}" ng-click="clickFruit($parent.$index, $index)">
+        {{fruit.emoji}}
+      </div>
+    </div>
+  </div>
+
+  <button ng-click="newGame()">New Game</button>
+
+  <script>
+    angular.module('fruitGame', [])
+      .controller('FruitCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+
+        $scope.score = 0;
+        $scope.movesLeft = 25;
+        $scope.gameOver = false;
+        $scope.board = [];
+        $scope.selectedFruit = null;
+        $scope.candies = ['🍎', '🍊', '🍋', '🍇', '🍓', '🍒'];
+
+        $scope.initBoard = function () {
+          $scope.board = [];
+          for (let r = 0; r < 7; r++) {
+            $scope.board[r] = [];
+            for (let c = 0; c < 7; c++) {
+              $scope.board[r][c] = { emoji: $scope.randomFruit(), selected: false, matched: false };
+            }
+          }
+        };
+
+        $scope.randomFruit = () => $scope.candies[Math.floor(Math.random() * $scope.candies.length)];
+
+        $scope.clickFruit = function (r, c) {
+          if ($scope.gameOver || $scope.movesLeft <= 0) return;
+          let fruit = $scope.board[r][c];
+
+          if (!$scope.selectedFruit) {
+            fruit.selected = true;
+            $scope.selectedFruit = { r, c };
+          } else if ($scope.selectedFruit.r === r && $scope.selectedFruit.c === c) {
+            fruit.selected = false;
+            $scope.selectedFruit = null;
+          } else {
+            if (Math.abs($scope.selectedFruit.r - r) + Math.abs($scope.selectedFruit.c - c) === 1) {
+              $scope.swap(r, c, $scope.selectedFruit.r, $scope.selectedFruit.c);
+              $scope.movesLeft--;
+              if ($scope.movesLeft <= 0) $scope.gameOver = true;
+            }
+            $scope.clearSelection();
+          }
+        };
+
+        $scope.swap = function (r1, c1, r2, c2) {
+          let temp = $scope.board[r1][c1];
+          $scope.board[r1][c1] = $scope.board[r2][c2];
+          $scope.board[r2][c2] = temp;
+          $timeout($scope.findMatches, 150); // check matches after short delay
+        };
+
+        $scope.findMatches = function () {
+          let matched = false;
+
+          for (let r = 0; r < 7; r++) {
+            for (let c = 0; c < 5; c++) {
+              let e1 = $scope.board[r][c].emoji;
+              let e2 = $scope.board[r][c + 1].emoji;
+              let e3 = $scope.board[r][c + 2].emoji;
+              if (e1 === e2 && e2 === e3) {
+                $scope.board[r][c].matched = true;
+                $scope.board[r][c + 1].matched = true;
+                $scope.board[r][c + 2].matched = true;
+                matched = true;
+              }
+            }
+          }
+
+          for (let c = 0; c < 7; c++) {
+            for (let r = 0; r < 5; r++) {
+              let e1 = $scope.board[r][c].emoji;
+              let e2 = $scope.board[r + 1][c].emoji;
+              let e3 = $scope.board[r + 2][c].emoji;
+              if (e1 === e2 && e2 === e3) {
+                $scope.board[r][c].matched = true;
+                $scope.board[r + 1][c].matched = true;
+                $scope.board[r + 2][c].matched = true;
+                matched = true;
+              }
+            }
+          }
+
+          if (matched) {
+            $scope.score += 10;
+            $timeout($scope.applyGravity, 300);
+          }
+        };
+
+        $scope.applyGravity = function () {
+          for (let c = 0; c < 7; c++) {
+            let empty = [];
+            for (let r = 6; r >= 0; r--) {
+              if ($scope.board[r][c].matched) {
+                empty.push(r);
+              } else if (empty.length > 0) {
+                let target = empty.shift();
+                $scope.board[target][c] = $scope.board[r][c];
+                $scope.board[r][c] = { emoji: $scope.randomFruit(), selected: false, matched: false };
+                empty.push(r);
+              }
+            }
+          }
+
+          for (let r = 0; r < 7; r++) {
+            for (let c = 0; c < 7; c++) {
+              $scope.board[r][c].matched = false;
+            }
+          }
+
+          $timeout($scope.findMatches, 150);
+        };
+
+        $scope.clearSelection = function () {
+          for (let r = 0; r < 7; r++) {
+            for (let c = 0; c < 7; c++) {
+              $scope.board[r][c].selected = false;
+            }
+          }
+          $scope.selectedFruit = null;
+        };
+
+        $scope.newGame = function () {
+          $scope.score = 0;
+          $scope.movesLeft = 25;
+          $scope.gameOver = false;
+          $scope.selectedFruit = null;
+          $scope.initBoard();
+        };
+
+        $scope.newGame();
+      }]);
+  </script>
+</body>
+
+</html>

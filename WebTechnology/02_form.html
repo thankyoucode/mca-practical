@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>HTML Form</title>
+  <style>
+    input,
+    div {
+      margin: 2px;
+      padding: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Submit Your Info</h1>
+  <form action="/saveinfo" method="post">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+    </div>
+    <div>
+      <label for="social-link">Social link (Tweeter, LinkedIn, Github)</label>
+      <input type="text" id="social-link">
+    </div>
+    <div>
+      <label for="first-programming-language">First Programming Language</label>
+      <div id="first-programming-language">
+        <input type="radio" value="c" id="c" name="first-pro-lang"><label for="c">C</label>
+        <input type="radio" value="java" id="java" name="first-pro-lang"><label for="java">Java</label>
+        <input type="radio" value="cpp" id="cpp" name="first-pro-lang"><label for="cpp">C++</label>
+        <input type="radio" value="python" id="python" name="first-pro-lang"><label for="python">Python</label>
+        <input type="radio" value="javascript" id="javascript" name="first-pro-lang"><label
+          for="javascript">JavaScript</label>
+        <input type="radio" value="other" id="other" name="first-pro-lang"><label for="other">Other</label>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>

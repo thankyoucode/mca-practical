@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Event Handling in JavaScript</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="toggle">Toggle Hidden Info</button>
+  <article>
+    <h1>What Is Web3?</h1>
+    <p id="hiddencontext" class="hidden">
+      Web3 is the next evolution of the internet focused on decentralization,
+      user ownership, and trustless systems. Instead of relying on centralized
+      platforms, Web3 uses blockchain technology to give users more control over
+      their data, identity, and digital assets.
+    </p>
+  </article>
+
+
+  <script>
+    const toggle = document.getElementById('toggle');
+    const hiddencontext = document.getElementById('hiddencontext');
+
+    toggle.addEventListener("click", () => {
+      hiddencontext.classList.toggle('hidden');
+    })
+
+  </script>
+</body>
+
+</html>

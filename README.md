@@ -1,16 +1,18 @@
 # MCA Practical Code Repository
 
-It is funny to rerun most of programming languages and some of technology in mca as academic learning 😄
+I going to enjoy most of programming languages and some of technology in mca as academic learning 😄
 
 ## Navigation
 
-- [C Programs](#c-programs)
-- [Java Programs](#java-programs)
-- [SQL Programs](#sql-programs)
+- [C](#c)
+- [Java](#java)
+- [SQL](#sql)
+- [Web Technology](#web-technology)
+- [Computer Organization](#computer-organization)
 
 ---
 
-## C Programs
+## C
 
 - [01_calculator_program.c](C/01_calculator_program.c)
 - [02_area_of_triangle.c](C/02_area_of_triangle.c)
@@ -65,7 +67,7 @@ It is funny to rerun most of programming languages and some of technology in mca
 
 ---
 
-## Java Programs
+## Java
 
 - [\_01_Hello.java](Java/_01_Hello.java)
 - [\_02_PrimeAndFibonacci.java](Java/_02_PrimeAndFibonacci.java)
@@ -121,9 +123,47 @@ It is funny to rerun most of programming languages and some of technology in mca
 - [Thread_5_ABC.java](Java/Thread_5_ABC.java)
 - [Thread_6_sync.java](Java/Thread_6_sync.java)
 
-## SQL Programs
+---
 
-- Coming soon...
+## SQL
+
+- [set-1.md](RDBMS/set-1.md)
+- [set-2.md](RDBMS/set-2.md)
+- [set-3.md](RDBMS/set-3.md)
+- [set-4.md](RDBMS/set-4.md)
+- [set-5.md](RDBMS/set-5.md)
+- [set-6.md](RDBMS/set-6.md)
+- [set-7.md](RDBMS/set-7.md)
+- [set-8.md](RDBMS/set-8.md)
+- [set-9.md](RDBMS/set-9.md)
+- [set-10.md](RDBMS/set-10.md)
+
+---
+
+## Web Technology
+
+- [01_basic.html](WebTechnology/01_basic.html)
+- [02_form.html](WebTechnology/02_form.html)
+- [03_style.html](WebTechnology/03_style.html)
+- [04_responsive.html](WebTechnology/04_responsive.html)
+- [05_dommanipulation.html](WebTechnology/05_dommanipulation.html)
+- [06_handleevent.html](WebTechnology/06_handleevent.html)
+- [07_formvalidation.html](WebTechnology/07_formvalidation.html)
+- [08_angularjs.html](WebTechnology/08_angularjs.html)
+- [09_angularjs_events.html](WebTechnology/09_angularjs_events.html)
+- [10_form.php](WebTechnology/10_form.php)
+- [11_control_statements.php](WebTechnology/11_control_statements.php)
+- [12_crud.php](WebTechnology/12_crud.php)
+- [12_youtube_clone.sql](WebTechnology/12_youtube_clone.sql)
+- [13_laravel_setup.md](WebTechnology/13_laravel_setup.md)
+- [14_laravel_controller_router.md](WebTechnology/14_laravel_controller_router.md)
+- [15_laravel_blade_templates.md](WebTechnology/15_laravel_blade_templates.md)
+
+---
+
+## Computer Organization
+
+- [Practical-1-12.md](ComputerOrganization/Practical-1-12.md)
 
 ## Contributing
 
@@ -131,5 +171,6 @@ If you would like to contribute to this repository, feel free to open an issue o
 
 ## Updates
 
+`January 27, 2026` - RDBMS, WebTechnology, ComputerOrganization added, here MCA-SEM-1 complete.
 `January 05, 2026` - JAVA programs added.
 `December 04, 2025` - C 1 to 47 programs added.

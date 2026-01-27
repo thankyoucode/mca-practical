@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    .warning {
+      color: red;
+    }
+
+    body {
+      margin: 16px;
+    }
+
+    div {
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    div input,
+    button {
+      width: fit-content;
+      padding: 8px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Signup data validation</h1>
+  <form>
+    <div>
+      <label for="email">email</label>
+      <input name="email" type="email" id="email" onchange="validateForm()" required>
+      <span class="warning" id="email-warning"></span>
+    </div>
+    <div>
+      <label for="password1">Password</label>
+      <input type="password" name="password" id="password1" onchange="validateForm()" required>
+      <span class="warning" id="password1-warning"></span>
+    </div>
+    <div>
+      <label for="password2">Conform Password</label>
+      <input type="password" id="password2" onchange="validateForm()">
+      <span class="warning" id="password2-warning"></span>
+    </div>
+    <button type="submit" id="submitBtn" onclick="submit()" disabled>Signup</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <script>
+    const email = document.getElementById('email');
+    const password1 = document.getElementById('password1');
+    const password2 = document.getElementById('password2');
+    const submitBtn = document.getElementById('submitBtn');
+
+    const email_warning = document.getElementById('email-warning');
+    const password1_warning = document.getElementById('password1-warning');
+    const password2_warning = document.getElementById('password2-warning');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&?*"@()]).{8,}$/;
+
+    // ^.*              : Start
+    // (?=.{8,})        : Length
+    // (?=.*[a-zA-Z])   : Letters
+    // (?=.*\d)         : Digits
+    // (?=.*[!#$%&? "]) : Special characters
+    // .*$              : End
+
+    function checkEmail() {
+      if (!emailRegex.test(email.value)) {
+        email_warning.innerText = 'Invalid Email!';
+        return false;
+      } else {
+        email_warning.innerText = '';
+        return true;
+      }
+    }
+
+    function checkPassword1() {
+      if (!passwordRegex.test(password1.value)) {
+        password1_warning.innerText = 'Enter Strong Password!';
+        return false;
+      } else {
+        password1_warning.innerText = '';
+        return true;
+      }
+    }
+
+    function checkPassword2() {
+      if (password1.value != password2.value) {
+        password2_warning.innerText = 'Password Not Match!';
+        return false;
+      } else {
+        password2_warning.innerText = '';
+        return true;
+      }
+    }
+
+    function validateForm() {
+      const isValid = checkEmail() && checkPassword1() && checkPassword2();
+      submitBtn.disabled = !isValid;
+      return isValid;
+    }
+
+    function submit() {
+      if (!validateForm()) {
+        password2_warning.innerText = 'Signup Fail: check details !';
+      }
+    }
+  </script>
+</body>
+
+</html>
